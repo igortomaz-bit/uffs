@@ -19,12 +19,12 @@ POST http://api_exemplo.com.br/sessions
 A api vai verificar se as informações batem com as existentes no banco e se tudo estiver correto ela irá gerar o token 
 JWT com o seguinte formato:
 
-<span style="color:red">eyJhbGciOiJIUzL1NilslnR5cCI6lkpXVCj9</span>.
-<span style="color:blue">eyJzdWliOilxMjM0NTY30DkwliwibmFtZSl6lkpvaG4gRG9lliwiaWF0ljoxNTE2MjM5MDlyfQ</span>.
-<span style="color:green">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span>
+eyJhbGciOiJIUzL1NilslnR5cCI6lkpXVCj9.[1]<br>
+eyJzdWliOilxMjM0NTY30DkwliwibmFtZSl6lkpvaG4gRG9lliwiaWF0ljoxNTE2MjM5MDlyfQ.[2]<br>
+SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c[3]
 
 O token foi separado em partes para uma melhor explicação. A estrutura segue a seguinte definição:
 
-- <span style="color:red">Headers do token, onde estão localizados informações sobre o tipo do token e da criptografia utilizada.</span>
-- <span style="color:blue">Payload, onde fica armazenado as informações não sensíveis do usuário, por exemplo o id do usuário ou nome.</span>
-- <span style="color:green">Assinatura do token, a garantia que o token não foi modificado durante seu transporte e a veracidade das informações.</span>
+- Headers do token, onde estão localizados informações sobre o tipo do token e da criptografia utilizada.
+- Payload, onde fica armazenado as informações não sensíveis do usuário, por exemplo o id do usuário ou nome.
+- Assinatura do token, a garantia que o token não foi modificado durante seu transporte e a veracidade das informações.

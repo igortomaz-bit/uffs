@@ -28,3 +28,33 @@ O token foi separado em partes para uma melhor explicação. A estrutura segue a
 - [1] Headers do token, onde estão localizados informações sobre o tipo do token e da criptografia utilizada.
 - [2] Payload, onde fica armazenado as informações não sensíveis do usuário, por exemplo o id do usuário ou nome.
 - [3] Assinatura do token, a garantia que o token não foi modificado durante seu transporte e a veracidade das informações.
+
+### Aplicação
+
+Para criação deste exemplo foi utilizado as seguintes ferramentas:
+
+- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Node.js](https://nodejs.org/en/)
+- [Pacote npm - Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+- [Pacote npm - Crypto](https://nodejs.org/api/crypto.html)
+
+Para a criação do token a ser utilizado na autenticação da api no exemplo, foi adicionado uma rota /session 
+onde é enviado como exemplo login e senha do usuário como "teste". 
+
+O processo de geração do token acontece no session service, onde o password é encriptado para 
+simular o processo que ele faria normalmente ao tentar verificar se o usuário existe no banco e 
+autenticar antes de gerar o token. Também é validado se o login e senha foram enviados.
+
+Depois disso o token é criado com esse trecho de código, onde por ser um exemplo simples,
+não é adicionado nenhum header, o secret que é a chave é passada no segundo parametro e
+então enviado como subject (que é a informação que possívelmente seria utilizado obtido do token) e setado para o token expirar em 24h (que é o padrão utilizado em apis sem informação crítica).
+
+``` js
+const token = sign({}, secret, {
+      subject: login,
+      expiresIn: '1d'
+  });
+```
+
+Com isso o token é gerado e devolvido ao cliente para que seja utilizado como forma de autenticação
+nos processos de sua aplicação.

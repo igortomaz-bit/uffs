@@ -1,0 +1,7 @@
+# Internal folders
+dist
+node_modules
+
+# Internal Files
+yarn.lock
+package-lock.json

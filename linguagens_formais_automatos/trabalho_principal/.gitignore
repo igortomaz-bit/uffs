@@ -1,0 +1,9 @@
+# Folders
+node_modules
+vscode
+dist
+
+# Files
+yarn.lock
+
+# Local Files

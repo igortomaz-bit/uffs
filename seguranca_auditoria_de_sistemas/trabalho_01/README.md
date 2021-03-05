@@ -58,3 +58,13 @@ const token = sign({}, secret, {
 
 Com isso o token é gerado e devolvido ao cliente para que seja utilizado como forma de autenticação
 nos processos de sua aplicação.
+
+### Exemplo de funcionamento
+
+Fluxograma de funcionamento do exemplo:
+
+<img src="https://i.ibb.co/XShdmxB/trabalho-seguran-a-01.jpg" alt="trabalho-seguran-a-01" border="0">
+
+### Exemplo de uso do token gerado
+
+- Em desenvolvimento web, tanto na parte do frontend quanto backend, utiliza-se muito o jwt para realizar a validação de sessões, no caso, é utilizado para autenticar o usuário que está acessando uma determinada funcionalidade, permitindo ou não, que o mesmo prossiga com a ação. Uma vez que, é possível controlar o tempo de duração do token, consegue-se então ter controle do tempo em que o usuário permanecerá utilizando a aplicação, a partir daquela autenticação.
